@@ -5,15 +5,15 @@ const Navigation = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
   
   return (
-    <div>
+    <>
       <Navbar
-        color="light"
+        color="dark"
         expand="md"
         container
-        light
+        dark
       >
         <NavbarBrand href="/">
-          S&C
+          Scholarship and Course
         </NavbarBrand>
         <NavbarToggler onClick={() => {
           setNavbarOpen(!isNavbarOpen)
@@ -24,8 +24,8 @@ const Navigation = () => {
             navbar
           >
             <NavItem>
-              <NavLink href="/">
-                Utama
+              <NavLink href="/about">
+                Tentang Kami
               </NavLink>
             </NavItem>
             <UncontrolledDropdown
@@ -38,7 +38,7 @@ const Navigation = () => {
               >
                 Beasiswa
               </DropdownToggle>
-              <DropdownMenu end>
+              <DropdownMenu end dark>
                 <DropdownItem>
                   <NavLink href="/scholarship">
                     Pendidikan
@@ -49,21 +49,30 @@ const Navigation = () => {
                     Kursus
                   </NavLink>
                 </DropdownItem>
-                <DropdownItem divider />
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown
+              inNavbar
+              nav
+            >
+              <DropdownToggle
+                caret
+                nav
+              >
+                Ni Wayan Windayani
+              </DropdownToggle>
+              <DropdownMenu dark end>
                 <DropdownItem>
-                  Reset
+                  <NavLink href="/login">
+                    Logout
+                  </NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
-              <NavLink href="#">
-                Tentang Kami
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </>
   )
 }
 
