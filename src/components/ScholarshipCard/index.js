@@ -26,7 +26,7 @@ const ScholarshipCard = () => {
           <CardText className="scholarship-card__text">
             Beasiswa Pertamina Sobat Bumi merupakan apresiasi kepada mahasiswa berprestasi secara akademik, aktif dalam organisasi atau kegiatan sosial-kemasyarakatan, serta memiliki kepedulian terhadap lingkungan.
           </CardText>
-          <a href="/" className="link-primary">Selengkapnya</a>
+          <a href="/detail-scholarship" className="link-primary">Selengkapnya</a>
         </CardBody>
       </Card>
     </div>
