@@ -11,60 +11,67 @@ const About = () => {
       </div>
       <div className="our-team text-center">
         <h3>Tim Kami</h3>
-        <div className="photos">
-          <img src={PhotoWinda} alt="Foto Hilmi"/>
-        </div>
-        <h5>Hilmi Almuhtade Billah</h5>
-        <div className="labels">
-          <span>Leader</span>
-          <span>Web Developer</span>
-        </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
-        <div className="summaries">
-          <div className="summary">
-            <label>WhatsApp</label>
-            <span>087865463510</span>
+        <div className="our-team__item">
+        <div className="leader">
+          <div className="photos">
+            <img src={PhotoWinda} alt="Foto Hilmi"/>
           </div>
-          <div className="summary">
-            <label>Alamat</label>
-            <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+          <h5>Hilmi Almuhtade Billah</h5>
+          <div className="labels">
+            <span>Leader</span>
+            <span>Web Developer</span>
           </div>
-        </div>
-        <div className="more">
-          <button className="know-more">Know More</button>
-        </div>
-        <div className="photos">
-          <img src={PhotoWinda} alt="Foto Winda"/>
-        </div>
-        <h5>Ni Wayan Windayani</h5>
-        <div className="labels">
-          <span>Vice Leader</span>
-          <span>Web Developer</span>
-        </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
-        <div className="summaries">
-          <div className="summary">
-            <label>WhatsApp</label>
-            <span>087865463510</span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
+          <div className="summaries">
+            <div className="summary">
+              <label>WhatsApp</label>
+              <span>087865463510</span>
+            </div>
+            <div className="summary">
+              <label>Alamat</label>
+              <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+            </div>
           </div>
-          <div className="summary">
-            <label>Alamat</label>
-            <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+          <div className="more">
+          <a href="https://www.linkedin.com/in/ni-wayan-windayani-a6614b159/" target="blank"><button className="know-more">Know More</button></a>
           </div>
         </div>
-        <div className="more">
-          <button className="know-more">Know More</button>
+
+        <div className="vice-leader">
+          <div className="photos">
+            <img src={PhotoWinda} alt="Foto Winda"/>
+          </div>
+          <h5>Ni Wayan Windayani</h5>
+          <div className="labels">
+            <span>Vice Leader</span>
+            <span>Web Developer</span>
+          </div>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
+          <div className="summaries">
+            <div className="summary">
+              <label>WhatsApp</label>
+              <span>087865463510</span>
+            </div>
+            <div className="summary">
+              <label>Alamat</label>
+              <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+            </div>
+          </div>
+          <div className="more">
+            <a href="https://www.linkedin.com/in/ni-wayan-windayani-a6614b159/" target="blank"><button className="know-more">Know More</button></a>
+          </div>
+        </div>
         </div>
       </div>
-      <div className="follow-us text-center">
-        <h3>Ikuti Kami</h3>
+      <div className="follow-us">
+        <h4>Ikuti Kami</h4>
         <a href="/"><img src={IconWhatsapp} alt="WhatsApp"/></a>
         <a href="/"><img src={IconEmail} alt="Email"/></a>
         <a href="/"><img src={IconFacebook} alt="Facebook"/></a>
         <a href="/"><img src={IconInstagram} alt="Instagram"/></a>
       </div>
       
-      
+
     </div>
   )
 }
