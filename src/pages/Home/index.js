@@ -1,19 +1,14 @@
 import React from 'react';
-<<<<<<< HEAD
+import { HomepageImage } from '../../assets'
+import "./home.css"
 
 const Home = () => {
   return (
-    <div className="container">
-      <p className="text-danger">Haloo</p>
-=======
-import { Navigation } from '../../components';
-
-const Home = () => {
-  return (
-    <div>
-      <Navigation />
->>>>>>> 5ec35ea17ef0c66a44f4a8798b0bd81a284e8e19
-    </div>
+    <main>
+      <img className="img-fluid" width="100%" src={HomepageImage} alt="Poster Homepage"/>
+      <p className="homepage-text text-center">Temukan beasiswa dan kursus keinginanmu dengan mudah!</p>
+      <a href="/scholarship"><button className="btn-action">Get Started</button></a>
+    </main>
   )
 }
 

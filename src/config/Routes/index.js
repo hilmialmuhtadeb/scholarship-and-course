@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home, Scholarship } from '../../pages';
+import { Login, MainApp, Register } from '../../pages';
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
 
-        <Route path='/scholarship'>
-          <Scholarship />
+        <Route path='/login'>
+          <Login />
+        </Route>
+
+        <Route path='/register'>
+          <Register />
         </Route>
         
         <Route path='/'>
-          <Home />
+          <MainApp />
         </Route>
         
       </Switch>
