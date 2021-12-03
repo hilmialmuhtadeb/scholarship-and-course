@@ -5,5 +5,6 @@ import IconEmail from "./icons/email.png"
 import IconFacebook from "./icons/facebook.png"
 import IconInstagram from "./icons/instagram.png"
 import PhotoWinda from "./images/winda.jpg"
+import LoginPage from "./images/login-page.jpg"
 
-export {ScholarshipImage, HomepageImage, IconWhatsapp, IconEmail, IconFacebook, IconInstagram, PhotoWinda}
+export {ScholarshipImage, HomepageImage, IconWhatsapp, IconEmail, IconFacebook, IconInstagram, PhotoWinda, LoginPage}
