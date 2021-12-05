@@ -1,30 +1,27 @@
 import React from 'react'
-import { Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap'
 import './scholarshipCard.css'
-import { ScholarshipImage } from '../../assets'
 
-const ScholarshipCard = () => {
+const ScholarshipCard = (props) => {
+  const {title, poster, description, name} = props;
+  const deadline = new Date(props.deadline);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   return (
     <div>
       <Card className="mb-4 shadow">
-        <CardImg
-          alt="Card image cap"
-          src={ScholarshipImage}
-          top
-          width="100%"
-        />
+        <img src={poster} alt={title} className="img-card" />
         <CardBody>
           <CardTitle tag="h5">
-            Beasiswa Pertamina Sobat Bumi 2021
+            {title}
           </CardTitle>
           <CardSubtitle
             className="mb-2 text-muted"
             tag="small"
           >
-            S1 dan D3
+            {`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`} &middot; {name}
           </CardSubtitle>
           <CardText className="scholarship-card__text">
-            Beasiswa Pertamina Sobat Bumi merupakan apresiasi kepada mahasiswa berprestasi secara akademik, aktif dalam organisasi atau kegiatan sosial-kemasyarakatan, serta memiliki kepedulian terhadap lingkungan.
+            {description}
           </CardText>
           <a href="/detail-scholarship" className="link-primary">Selengkapnya</a>
         </CardBody>

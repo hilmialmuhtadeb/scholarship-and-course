@@ -14,7 +14,7 @@ const MainApp = () => {
         <Router>
           <Switch>
 
-            <Route path="/scholarship">
+            <Route path="/scholarships">
               <Scholarship />
             </Route>
 

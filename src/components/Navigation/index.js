@@ -40,7 +40,7 @@ const Navigation = () => {
               </DropdownToggle>
               <DropdownMenu end dark>
                 <DropdownItem>
-                  <NavLink href="/scholarship">
+                  <NavLink href="/scholarships">
                     Pendidikan
                   </NavLink>
                 </DropdownItem>
