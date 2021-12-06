@@ -17,7 +17,7 @@ const Login = () => {
           <input className="input" type="password"/>
         </form>
         <a href="/"><button className="button">Login</button></a>
-        <p>Don't have an account? <a className="register-link" href="/">Register</a></p>
+        <p>Don't have an account? <a className="register-link" href="/register">Register</a></p>
       </div>
       </div>
     
