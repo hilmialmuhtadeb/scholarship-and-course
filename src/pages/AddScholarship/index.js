@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import { ScholarshipForm } from '../../components'
 import { Button, Form, FormGroup, FormText, Input, Label } from 'reactstrap'
+import axios from 'axios'
 import "./addScholarship.css"
 
 const AddScholarship = () => {
@@ -23,12 +24,10 @@ const AddScholarship = () => {
     formData.append('poster', poster);
     formData.append('description', description);
 
-    fetch('http://localhost:4000/v1/scholarship', {
-      method: 'POST',
+    axios.post('http://localhost:4000/v1/scholarship', formData, {
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'content-type': 'multipart/form-data',
       },
-      body: formData,
     })
     .then((response) => {
       console.log(response);
