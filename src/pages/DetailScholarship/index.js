@@ -1,31 +1,66 @@
-import React from 'react'
-import { ScholarshipImage } from '../../assets'
-import { Divider } from '../../components'
+import React, { useEffect } from 'react'
+import { withRouter } from 'react-router'
+import { useState } from 'react/cjs/react.development'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
 import "./detailScholarship.css"
 
-const DetailScholarship = () => {
-  return (
-    <main className="container my-4">
+const DetailScholarship = (props) => {
+  const [scholarship, setScholarship] = useState();
+  let deadline;
 
-      <div className="row justify-content-center">
-        <div className="col-md-8 text-center">
-          <img src={ScholarshipImage} alt="Poster Beasiswa" />
-          <Divider color="black" />
-          <h1 className="scholarship__title my-4">Beasiswa UMN (Universitas Multimedia Nusantara) Kuliah S1 Tahun 2021</h1>
-          <p className="text-secondary">Batas Pengajuan : 17 Maret 2022</p>
-          <p className="text-opacity-50 text-start">
-            <p className="scholarship__detail">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odit eligendi veniam maxime et atque cum ut aspernatur repudiandae iste voluptas nesciunt saepe laudantium aliquid minima! Odit similique eveniet, earum natus rem eligendi quam aut aliquam, pariatur eum architecto esse iure ipsa qui, iste quo magni voluptas reprehenderit temporibus vitae voluptate maxime saepe! Cupiditate veniam nisi soluta natus consectetur beatae.
+  if (scholarship) {
+    deadline = new Date(scholarship.deadline);
+  }
+
+  const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  
+  useEffect(() => {
+    const id = props.match.params.id;
+    const fetchData = async () => {
+      let response = await fetch(`http://localhost:4000/v1/scholarship/${id}`);
+      response = await response.json();
+      setScholarship(response.data);
+    }
+
+    fetchData();
+  }, [props]);
+  
+  if (scholarship) {
+    return (
+      <main className="container my-4">
+  
+        <div className="row justify-content-center">
+
+          <div className="col-md-6 text-center">
+            <img src={`http://localhost:4000/v1/${scholarship.poster}`} alt="Poster Beasiswa" className="poster-image" />
+          </div>
+
+          <div className="col-md-6">
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <a href="/scholarships">
+                  Beasiswa
+                </a>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>
+                {scholarship.title}
+              </BreadcrumbItem>
+            </Breadcrumb>
+            <h1 className="scholarship__title my-2">{scholarship.title}</h1>
+            <p className="text-secondary">Batas Pengajuan : {`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`}</p>
+            <p className="text-opacity-50 text-start">
+                {scholarship.description}
             </p>
-            <p className="scholarship__detail">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque molestiae voluptas quisquam, provident quas enim libero, quo aperiam omnis, non possimus incidunt aspernatur laborum totam beatae labore? Dolores officiis ullam suscipit quidem quisquam veritatis voluptate, aut saepe sint nemo nulla consequuntur voluptates velit quasi, sapiente cum doloribus? Sed, animi ducimus.
-            </p>
-          </p>
+            <p className="text-start text-secondary">Ditulis oleh {scholarship.author.name}</p>
+          </div>
+
         </div>
-      </div>
-
-    </main>
-  )
+  
+      </main>
+    )
+  } else {
+    return <p className="loading-text">Loading ....</p>
+  }
 }
 
-export default DetailScholarship
+export default withRouter(DetailScholarship)

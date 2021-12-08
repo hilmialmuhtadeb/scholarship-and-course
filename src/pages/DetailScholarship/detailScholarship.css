@@ -5,3 +5,13 @@
 .scholarship__detail {
   text-indent: 50px;
 }
+.poster-image {
+  width: 80%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.loading-text {
+  text-align: center;
+  line-height: 500px;
+}

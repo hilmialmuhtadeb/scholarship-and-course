@@ -20,7 +20,7 @@ const Scholarship = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await fetch(`http://localhost:4000/v1/scholarships?page=${counter}&perPage=3`);
+      let response = await fetch(`http://localhost:4000/v1/scholarships?page=${counter}&perPage=9`);
       response = await response.json();
       setDataScholarship(response.data);
       setPageInformation(response);
@@ -47,6 +47,7 @@ const Scholarship = () => {
                 poster={`http://localhost:4000/v1/${scholarship.poster}`}
                 description={scholarship.description}
                 name={scholarship.author.name}
+                id={scholarship._id}
               />
             </div>
           )

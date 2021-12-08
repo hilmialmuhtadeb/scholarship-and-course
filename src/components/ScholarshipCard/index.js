@@ -3,9 +3,10 @@ import { Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap'
 import './scholarshipCard.css'
 
 const ScholarshipCard = (props) => {
-  const {title, poster, description, name} = props;
+  const {title, poster, description, name, id} = props;
+  console.log(poster);
   const deadline = new Date(props.deadline);
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   return (
     <div>
       <Card className="mb-4 shadow">
@@ -23,7 +24,7 @@ const ScholarshipCard = (props) => {
           <CardText className="scholarship-card__text">
             {description}
           </CardText>
-          <a href="/detail-scholarship" className="link-primary">Selengkapnya</a>
+          <a href={`/detail-scholarship/${id}`} className="link-primary">Selengkapnya</a>
         </CardBody>
       </Card>
     </div>
