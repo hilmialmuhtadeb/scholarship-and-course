@@ -22,7 +22,7 @@ const MainApp = () => {
               <DetailScholarship />
             </Route>
 
-            <Route path="/add-scholarship">
+            <Route path="/add-scholarship/:id?">
               <AddScholarship />
             </Route>
 

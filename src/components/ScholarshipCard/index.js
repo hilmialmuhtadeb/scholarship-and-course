@@ -4,7 +4,6 @@ import './scholarshipCard.css'
 
 const ScholarshipCard = (props) => {
   const {title, poster, description, name, id} = props;
-  console.log(poster);
   const deadline = new Date(props.deadline);
   const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   return (

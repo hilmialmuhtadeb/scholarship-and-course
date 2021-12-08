@@ -52,6 +52,10 @@ const DetailScholarship = (props) => {
                 {scholarship.description}
             </p>
             <p className="text-start text-secondary">Ditulis oleh {scholarship.author.name}</p>
+            <div className="d-flex">
+              <a href={`/add-scholarship/${scholarship._id}`} className="me-3">Edit</a> | 
+              <a href="#a" className="mx-3 text-danger">Hapus</a>
+            </div>
           </div>
 
         </div>
