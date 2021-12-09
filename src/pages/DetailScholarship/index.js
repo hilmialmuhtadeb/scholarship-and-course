@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import { withRouter } from 'react-router'
 import { useState } from 'react/cjs/react.development'
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import "./detailScholarship.css"
+import axios from 'axios';
 
 const DetailScholarship = (props) => {
   const [scholarship, setScholarship] = useState();
@@ -13,6 +16,37 @@ const DetailScholarship = (props) => {
   }
 
   const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+  const confirmDelete = () => {
+    confirmAlert({
+      title: 'Hapus Informasi Beasiswa?',
+      message: 'Informasi beasiswa akan dihapus secara permanen.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            console.log(scholarship.id);
+            axios.delete(`http://localhost:4000/v1/scholarship/${scholarship._id}`)
+            .then((response) => {
+              if (response.status === 200) {
+                alert(response.data.message);
+                window.location.href = '/scholarships';
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {
+            console.log('batal menghapus beasiswa');
+          }
+        }
+      ]
+    });
+  }
   
   useEffect(() => {
     const id = props.match.params.id;
@@ -52,9 +86,9 @@ const DetailScholarship = (props) => {
                 {scholarship.description}
             </p>
             <p className="text-start text-secondary">Ditulis oleh {scholarship.author.name}</p>
-            <div className="d-flex">
+            <div className="d-flex align-items-center">
               <a href={`/add-scholarship/${scholarship._id}`} className="me-3">Edit</a> | 
-              <a href="#a" className="mx-3 text-danger">Hapus</a>
+              <Button color="danger" className="ms-3" onClick={confirmDelete}>Hapus</Button>
             </div>
           </div>
 

@@ -20,13 +20,11 @@ const AddScholarship = (props) => {
       axios.get(`http://localhost:4000/v1/scholarship/${id}`)
       .then((response) => {
         const data = response.data.data;
-        console.log(data);
         let deadline = new Date(data.deadline);
-        deadline = `${deadline.getFullYear()}-${deadline.getMonth()+1}-${deadline.getDate() < 10 ? '0'+deadline.getDate() : deadline.getDate()}`;
+        deadline = `${deadline.getFullYear()}-${deadline.getMonth()+1 < 10 ? '0'+ (deadline.getMonth()+1) : deadline.getMonth()+1}-${deadline.getDate() < 10 ? '0'+ deadline.getDate() : deadline.getDate()}`;
         
         setTitle(data.title);
         setDeadline(deadline);
-        setPoster(data.poster);
         setImage(`http://localhost:4000/v1/${data.poster}`);
         setDescription(data.description);
       })
@@ -49,10 +47,8 @@ const AddScholarship = (props) => {
     };
     if (isEdit) {
       const id = props.match.params.id;
-      console.log('update data');
       updateToApi(scholarship, id);
     } else {
-      console.log('post data');
       postToApi(scholarship);
     }
   }
@@ -65,7 +61,7 @@ const AddScholarship = (props) => {
 
         <FormGroup>
           <Label for="title">Judul</Label>
-          <Input id="title" name="title" type="text" value={isEdit ? title : ''} onChange={(e) => setTitle(e.target.value)} />
+          <Input id="title" name="title" type="text" value={isEdit ? title : undefined} onChange={(e) => setTitle(e.target.value)} />
         </FormGroup>
 
         <FormGroup>
@@ -77,12 +73,12 @@ const AddScholarship = (props) => {
 
         <FormGroup>
           <Label for="deadline">Batas Pengajuan</Label>
-          <Input id="deadline" name="deadline" type="date" value={isEdit ? deadline : ''} onChange={(e) => setDeadline(e.target.value)} />
+          <Input id="deadline" name="deadline" type="date" value={isEdit ? deadline : undefined} onChange={(e) => setDeadline(e.target.value)} />
         </FormGroup>
 
         <FormGroup>
           <Label for="description">Deskripsi</Label>
-          <textarea className="form-control" name="description" id="description" rows="10" value={isEdit ? description : ''} onChange={(e) => setDescription(e.target.value)}></textarea>
+          <textarea className="form-control" name="description" id="description" rows="10" value={isEdit ? description : undefined} onChange={(e) => setDescription(e.target.value)}></textarea>
           <FormText>&#8505; Jelaskan detail beasiswa yang berisi cakupan, syarat, dan cara mendaftar beasiswa.</FormText>
         </FormGroup>
 

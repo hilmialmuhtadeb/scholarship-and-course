@@ -14,7 +14,10 @@ const postToApi = (scholarship) => {
     },
   })
   .then((response) => {
-    console.log(response);
+    if (response.status === 201) {
+      alert(response.data.message);
+      window.location.href = `/scholarships`;
+    };
   })
   .catch((error) => {
     console.log(error);
@@ -26,16 +29,21 @@ const updateToApi = (scholarship, id) => {
   const formData = new FormData();
   formData.append('title', title);
   formData.append('deadline', deadline);
-  formData.append('poster', poster);
   formData.append('description', description);
+  if (poster) {
+    formData.append('poster', poster);
+  }
 
-  axios.put(`http://localhost:4000/v1/scholarship/${id}`, formData, {
+  axios.patch(`http://localhost:4000/v1/scholarship/${id}`, formData, {
     headers: {
       'content-type': 'multipart/form-data',
     },
   })
   .then((response) => {
-    console.log('berhasil update: ', response);
+    if (response.status === 200) {
+      alert(response.data.message);
+      window.location.href = `/detail-scholarship/${response.data.data._id}`;
+    };
   })
   .catch((error) => {
     console.log(error);
