@@ -9,7 +9,9 @@ const ScholarshipCard = (props) => {
   return (
     <div>
       <Card className="mb-4 shadow">
-        <img src={poster} alt={title} className="img-card" />
+        <a href={`/detail-scholarship/${id}`}>
+          <img src={poster} alt={title} className="img-card" />
+        </a>
         <CardBody>
           <CardTitle tag="h5">
             {title}

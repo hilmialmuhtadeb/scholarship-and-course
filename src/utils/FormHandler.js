@@ -1,10 +1,11 @@
 import axios from "axios";
 
 const postToApi = (scholarship) => {
-  const {title, deadline, poster, description} = scholarship;
+  const {title, deadline, poster, description, category} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
   formData.append('deadline', deadline);
+  formData.append('category', category);
   formData.append('poster', poster);
   formData.append('description', description);
 
@@ -25,10 +26,11 @@ const postToApi = (scholarship) => {
 }
 
 const updateToApi = (scholarship, id) => {
-  const {title, deadline, poster, description} = scholarship;
+  const {title, deadline, poster, description, category} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
   formData.append('deadline', deadline);
+  formData.append('category', category);
   formData.append('description', description);
   if (poster) {
     formData.append('poster', poster);

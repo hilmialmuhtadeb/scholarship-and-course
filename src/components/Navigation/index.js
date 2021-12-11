@@ -6,71 +6,47 @@ const Navigation = () => {
   
   return (
     <>
-      <Navbar
-        color="dark"
-        expand="md"
-        container
-        dark
-      >
-        <NavbarBrand href="/">
-          Scholarship and Course
-        </NavbarBrand>
-        <NavbarToggler onClick={() => {
-          setNavbarOpen(!isNavbarOpen)
-        }} />
+      <Navbar color="dark" expand="md" container dark>
+        <NavbarBrand href="/">Scholarship and Course</NavbarBrand>
+
+        <NavbarToggler onClick={() => {setNavbarOpen(!isNavbarOpen)}} />
+
         <Collapse isOpen={isNavbarOpen} navbar>
-          <Nav
-            className="ms-auto"
-            navbar
-          >
-            <NavItem>
-              <NavLink href="/about">
-                Tentang Kami
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown
-              inNavbar
-              nav
-            >
-              <DropdownToggle
-                caret
-                nav
-              >
-                Beasiswa
-              </DropdownToggle>
+          <Nav className="ms-auto" navbar>
+
+            <UncontrolledDropdown inNavbar nav>
+              <DropdownToggle caret nav>Beasiswa</DropdownToggle>
+
               <DropdownMenu end dark>
                 <DropdownItem>
-                  <NavLink href="/scholarships">
-                    Pendidikan
-                  </NavLink>
+                  <NavLink href="/scholarships">Pendidikan</NavLink>
                 </DropdownItem>
+
                 <DropdownItem>
-                  <NavLink href="/course">
-                    Kursus
-                  </NavLink>
+                  <NavLink href="/courses">Kursus</NavLink>
                 </DropdownItem>
               </DropdownMenu>
+
             </UncontrolledDropdown>
-            <UncontrolledDropdown
-              inNavbar
-              nav
-            >
-              <DropdownToggle
-                caret
-                nav
-              >
-                Ni Wayan Windayani
-              </DropdownToggle>
+
+            <NavItem>
+              <NavLink href="/about">Tentang Kami</NavLink>
+            </NavItem>
+
+            <UncontrolledDropdown inNavbar nav>
+              <DropdownToggle caret nav>Ni Wayan Windayani</DropdownToggle>
+
               <DropdownMenu dark end>
                 <DropdownItem>
-                  <NavLink href="/login">
-                    Logout
-                  </NavLink>
+                  <NavLink href="/login">Logout</NavLink>
                 </DropdownItem>
               </DropdownMenu>
+
             </UncontrolledDropdown>
+
           </Nav>
         </Collapse>
+
       </Navbar>
     </>
   )

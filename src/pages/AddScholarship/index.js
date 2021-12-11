@@ -11,6 +11,7 @@ const AddScholarship = (props) => {
   const [poster, setPoster] = useState('');
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState('');
+  const [category, setCategory] = useState();
   const [isEdit, setIsEdit] = useState(false);
 
   useEffect(() => {
@@ -43,7 +44,8 @@ const AddScholarship = (props) => {
       title,
       deadline,
       poster,
-      description
+      description,
+      category,
     };
     if (isEdit) {
       const id = props.match.params.id;
@@ -65,14 +67,23 @@ const AddScholarship = (props) => {
         </FormGroup>
 
         <FormGroup>
-          <Label for="poster">Poster</Label>
-          {image && <img className="preview d-block mb-3" src={image} alt="preview" />}
-          <Input id="poster" name="poster" type="file" onChange={(e) => onPosterUpload(e)} />
-          <FormText>&#8505; Menaambahkan poster dapat membuat mahasiswa lebih tertarik dan informasi mudah dipahami.</FormText>
+          <Label for="category">Kategori</Label>
+          <Input id="category" name="category" type="select" onChange={(e) => setCategory(e.target.value)}>
+            <option disabled selected>Pilih salah satu kategori!</option>
+            <option value="1">Pendidikan</option>
+            <option value="2">Kursus</option>
+          </Input>
         </FormGroup>
 
         <FormGroup>
-          <Label for="deadline">Batas Pengajuan</Label>
+          <Label for="poster">Poster</Label>
+          {image && <img className="preview d-block mb-3" src={image} alt="preview" />}
+          <Input id="poster" name="poster" type="file" onChange={(e) => onPosterUpload(e)} />
+          <FormText>&#8505; Menambahkan poster dapat membuat mahasiswa lebih tertarik dan informasi mudah dipahami.</FormText>
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="deadline">Batas Pengajuan Beasiswa</Label>
           <Input id="deadline" name="deadline" type="date" value={isEdit ? deadline : undefined} onChange={(e) => setDeadline(e.target.value)} />
         </FormGroup>
 
