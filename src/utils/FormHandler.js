@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const postToApi = (scholarship) => {
+const postScholarshipToApi = (scholarship) => {
   const {title, deadline, poster, description, category} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
@@ -9,7 +9,8 @@ const postToApi = (scholarship) => {
   formData.append('poster', poster);
   formData.append('description', description);
 
-  axios.post('http://localhost:4000/v1/scholarship', formData, {
+  axios.post('http://localhost:4000/v1/scholarships', formData, {
+    withCredentials: true,
     headers: {
       'content-type': 'multipart/form-data',
     },
@@ -25,7 +26,7 @@ const postToApi = (scholarship) => {
   });
 }
 
-const updateToApi = (scholarship, id) => {
+const updateScholarshipToApi = (scholarship, id) => {
   const {title, deadline, poster, description, category} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
@@ -36,7 +37,8 @@ const updateToApi = (scholarship, id) => {
     formData.append('poster', poster);
   }
 
-  axios.patch(`http://localhost:4000/v1/scholarship/${id}`, formData, {
+  axios.patch(`http://localhost:4000/v1/scholarships/${id}`, formData, {
+    withCredentials: true,
     headers: {
       'content-type': 'multipart/form-data',
     },
@@ -52,7 +54,46 @@ const updateToApi = (scholarship, id) => {
   });
 }
 
+const postUserToApi = (user) => {
+  const { name, username, password } = user;
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('username', username);
+  formData.append('password', password);
+
+  axios.post('http://localhost:4000/v1/auth/register', formData)
+    .then((response) => {
+      if (response.status === 201) {
+        alert(response.data.message);
+        window.location.href = `/login`;
+      }
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+const loginUserToApi = (user) => {
+  const { username, password } = user;
+  const formData = new FormData();
+  formData.append('username', username);
+  formData.append('password', password);
+
+  axios.post('http://localhost:4000/v1/auth/login', formData, {
+    withCredentials: true,
+  })
+    .then((response) => {
+      alert('Berhasil login!');
+      return window.location.href = '/';
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
 export {
-  postToApi,
-  updateToApi,
+  postScholarshipToApi,
+  updateScholarshipToApi,
+  postUserToApi,
+  loginUserToApi,
 };

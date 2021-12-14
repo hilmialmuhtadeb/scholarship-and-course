@@ -26,7 +26,9 @@ const DetailScholarship = (props) => {
           label: 'Yes',
           onClick: () => {
             console.log(scholarship.id);
-            axios.delete(`http://localhost:4000/v1/scholarship/${scholarship._id}`)
+            axios.delete(`http://localhost:4000/v1/scholarships/${scholarship._id}`, {
+              withCredentials: true,
+            })
             .then((response) => {
               if (response.status === 200) {
                 alert(response.data.message);
@@ -51,7 +53,7 @@ const DetailScholarship = (props) => {
   useEffect(() => {
     const id = props.match.params.id;
     const fetchData = async () => {
-      let response = await fetch(`http://localhost:4000/v1/scholarship/${id}`);
+      let response = await fetch(`http://localhost:4000/v1/scholarships/${id}`);
       response = await response.json();
       setScholarship(response.data);
     }

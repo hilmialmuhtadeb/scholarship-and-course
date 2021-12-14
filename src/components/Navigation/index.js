@@ -1,8 +1,22 @@
+import axios from 'axios';
 import React, {useState} from 'react'
 import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap'
 
 const Navigation = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
+
+  const logout = () => {
+    axios.post('http://localhost:4000/v1/auth/logout', '', {
+      withCredentials: true,
+    })
+      .then((res) => {
+        alert('berhasil logout');
+        return window.location.href = '/login';
+      })
+      .catch((err) => {
+        alert('gagal logout')
+      });
+  }
   
   return (
     <>
@@ -38,7 +52,7 @@ const Navigation = () => {
 
               <DropdownMenu dark end>
                 <DropdownItem>
-                  <NavLink href="/login">Logout</NavLink>
+                  <NavLink onClick={logout}>Logout</NavLink>
                 </DropdownItem>
               </DropdownMenu>
 

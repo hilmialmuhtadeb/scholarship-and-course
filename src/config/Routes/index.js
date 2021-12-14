@@ -15,7 +15,7 @@ const Routes = () => {
           <Register />
         </Route>
         
-        <Route path='/'>
+        <Route path='/' >
           <MainApp />
         </Route>
         
