@@ -9,7 +9,7 @@ const AddScholarship = (props) => {
   const [title, setTitle] = useState('');
   const [deadline, setDeadline] = useState(null);
   const [poster, setPoster] = useState('');
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState();
   const [isEdit, setIsEdit] = useState(false);
@@ -18,12 +18,13 @@ const AddScholarship = (props) => {
     const id = props.match.params.id;
     if (id) {
       setIsEdit(true);
-      axios.get(`http://localhost:4000/v1/scholarship/${id}`)
+      axios.get(`http://localhost:4000/v1/scholarships/${id}`)
       .then((response) => {
         const data = response.data.data;
         let deadline = new Date(data.deadline);
         deadline = `${deadline.getFullYear()}-${deadline.getMonth()+1 < 10 ? '0'+ (deadline.getMonth()+1) : deadline.getMonth()+1}-${deadline.getDate() < 10 ? '0'+ deadline.getDate() : deadline.getDate()}`;
         
+        setCategory(data.category);
         setTitle(data.title);
         setDeadline(deadline);
         setImage(`http://localhost:4000/v1/${data.poster}`);
@@ -31,12 +32,16 @@ const AddScholarship = (props) => {
       })
       .catch((error) => console.log('error : ', error))
     }
-  }, [props]);
+  }, [props.match.params.id]);
 
   const onPosterUpload = (e) => {
     const file = e.target.files[0];
     setPoster(file);
-    setImage(URL.createObjectURL(file));
+    try {
+      setImage(URL.createObjectURL(file));
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   const onSubmit = () => {
@@ -46,6 +51,8 @@ const AddScholarship = (props) => {
       poster,
       description,
       category,
+      user_name: props.user.name,
+      user_id: props.user._id,
     };
     if (isEdit) {
       const id = props.match.params.id;
@@ -70,8 +77,8 @@ const AddScholarship = (props) => {
           <Label for="category">Kategori</Label>
           <Input id="category" name="category" type="select" onChange={(e) => setCategory(e.target.value)}>
             <option disabled selected>Pilih salah satu kategori!</option>
-            <option value="1">Pendidikan</option>
-            <option value="2">Kursus</option>
+            <option value="1" selected={category === 1 ? true : false}>Pendidikan</option>
+            <option value="2" selected={category === 2 ? true : false}>Kursus</option>
           </Input>
         </FormGroup>
 

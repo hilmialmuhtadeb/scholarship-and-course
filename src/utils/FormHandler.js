@@ -1,13 +1,15 @@
 import axios from "axios";
 
 const postScholarshipToApi = (scholarship) => {
-  const {title, deadline, poster, description, category} = scholarship;
+  const {title, deadline, poster, description, category, user_name, user_id} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
   formData.append('deadline', deadline);
   formData.append('category', category);
   formData.append('poster', poster);
   formData.append('description', description);
+  formData.append('user_name', user_name);
+  formData.append('user_id', user_id);
 
   axios.post('http://localhost:4000/v1/scholarships', formData, {
     withCredentials: true,

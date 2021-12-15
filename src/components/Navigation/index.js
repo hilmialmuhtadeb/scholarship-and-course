@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap'
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
 
   const logout = () => {
@@ -16,6 +16,33 @@ const Navigation = () => {
       .catch((err) => {
         alert('gagal logout')
       });
+  }
+
+  let menu;
+  if(!props.user) {
+    menu = (
+      <>
+        <NavItem className='ms-5'>
+          <NavLink href="/register">Daftar</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/login">Masuk</NavLink>
+        </NavItem>
+      </>
+    );
+  } else {
+    menu = (
+      <UncontrolledDropdown inNavbar nav className='ms-5'>
+        <DropdownToggle caret nav>{ props.user.name }</DropdownToggle>
+
+        <DropdownMenu dark end>
+          <DropdownItem>
+            <NavLink onClick={logout}>Logout</NavLink>
+          </DropdownItem>
+        </DropdownMenu>
+
+      </UncontrolledDropdown>
+    );
   }
   
   return (
@@ -47,16 +74,7 @@ const Navigation = () => {
               <NavLink href="/about">Tentang Kami</NavLink>
             </NavItem>
 
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>Ni Wayan Windayani</DropdownToggle>
-
-              <DropdownMenu dark end>
-                <DropdownItem>
-                  <NavLink onClick={logout}>Logout</NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-
-            </UncontrolledDropdown>
+            { menu }
 
           </Nav>
         </Collapse>

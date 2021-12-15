@@ -32,7 +32,7 @@ const Scholarship = (props) => {
     <main className="container my-5">
 
       <div className="text-center mb-4">
-        <h1 className='fw-normal'>Semua Beasiswa : <span className="fw-bold">{props.category < 2 ? 'Pendidikan' : 'Kursus'}</span></h1>
+        <h1 className='fw-normal'>Kategori Beasiswa : <span className="fw-bold">{props.category < 2 ? 'Pendidikan' : 'Kursus'}</span></h1>
       </div>
 
       <div className="d-flex justify-content-end mb-4">

@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import {postUserToApi} from '../../utils/FormHandler';
 // import { LoginPage } from '../../assets'
 
-const Register = () => {
+const Register = (props) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +16,10 @@ const Register = () => {
     };
 
     postUserToApi(user);
+  }
+
+  if (props.user) {
+    return window.location.href = '/';
   }
   
   return (
@@ -44,7 +48,7 @@ const Register = () => {
               <Button color="primary" onClick={onSubmit}>Daftar</Button>
             </div>
             <p className='m-0'>Sudah punya akun? <a href="/login">Masuk</a></p>
-            <a href="/" className="home-link">Back to home</a>
+            <a href="/" className="home-link">Kembali ke home</a>
 
           </Form>
       </div>

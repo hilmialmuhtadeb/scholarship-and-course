@@ -4,7 +4,7 @@ import { loginUserToApi } from '../../utils/FormHandler';
 // import "./login.css"
 // import { LoginPage } from '../../assets'
 
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,6 +15,10 @@ const Login = () => {
     };
 
     loginUserToApi(user);
+  }
+
+  if (props.user) {
+    return window.location.href = '/';
   }
 
   return (
@@ -38,7 +42,7 @@ const Login = () => {
               <Button color="primary" onClick={onSubmit}>Masuk</Button>
             </div>
             <p className='m-0'>Belum punya akun? <a href="/register">Daftar</a></p>
-            <a href="/" className="home-link">Back to home</a>
+            <a href="/" className="home-link">Kembali ke home</a>
 
           </Form>
       </div>

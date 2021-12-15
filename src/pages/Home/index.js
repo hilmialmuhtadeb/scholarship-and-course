@@ -3,6 +3,7 @@ import { HomepageImage } from '../../assets'
 import "./home.css"
 
 const Home = () => {
+  
   return (
     <main>
       <img className="img-fluid" width="100%" src={HomepageImage} alt="Poster Homepage"/>
