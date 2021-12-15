@@ -1,27 +1,36 @@
 import React from 'react'
-import { IconWhatsapp, IconEmail, IconFacebook, IconInstagram, PhotoWinda} from '../../assets'
+import { IconWhatsapp, IconEmail, IconFacebook, IconInstagram, PhotoWinda, PhotoHilmi} from '../../assets'
 import "./about.css"
 
 const About = () => {
   return (
     <div>
-      <div className="about-us text-center">
-        <h3>Tentang Kami</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque molestiae voluptas quisquam, provident quas enim libero, quo aperiam omnis, non possimus incidunt aspernatur laborum totam beatae labore? Dolores officiis ullam suscipit quidem quisquam veritatis voluptate, aut saepe sint nemo nulla consequuntur voluptates velit quasi, sapiente cum doloribus? Sed, animi ducimus.</p>
+      <div className="about">
+        <div className="about-us text-center">
+          <h3>Tentang Kami</h3>
+          <p>Scholarship and Course merupakan platform berbasis website sebagai media untuk mendapatkan informasi atau membagikan informasi beasiswa pendidikan dan kursus. <a href="/">Create your future easily!</a></p>
+        </div>
+        <div className="follow-us">
+          <h4>Ikuti Kami</h4>
+          <a href="/"><img src={IconWhatsapp} alt="WhatsApp"/></a>
+          <a href="/"><img src={IconEmail} alt="Email"/></a>
+          <a href="/"><img src={IconFacebook} alt="Facebook"/></a>
+          <a href="/"><img src={IconInstagram} alt="Instagram"/></a>
+        </div>
       </div>
       <div className="our-team text-center">
         <h3>Tim Kami</h3>
         <div className="our-team__item">
         <div className="leader">
           <div className="photos">
-            <img src={PhotoWinda} alt="Foto Hilmi"/>
+            <img src={PhotoHilmi} alt="Foto Hilmi"/>
           </div>
           <h5>Hilmi Almuhtade Billah</h5>
           <div className="labels">
             <span>Leader</span>
             <span>Web Developer</span>
           </div>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
+          <p>Halo saya hilmi mahasiswa semester 5 Universitas Negeri Surabaya</p>
           <div className="summaries">
             <div className="summary">
               <label>WhatsApp</label>
@@ -29,11 +38,11 @@ const About = () => {
             </div>
             <div className="summary">
               <label>Alamat</label>
-              <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+              <span>Surabaya, Jawa Timur</span>
             </div>
           </div>
           <div className="more">
-          <a href="https://www.linkedin.com/in/ni-wayan-windayani-a6614b159/" target="blank"><button className="know-more">Know More</button></a>
+          <a href="https://github.com/hilmialmuhtadeb" target="blank"><button className="know-more">Know More</button></a>
           </div>
         </div>
 
@@ -46,7 +55,7 @@ const About = () => {
             <span>Vice Leader</span>
             <span>Web Developer</span>
           </div>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
+          <p>Halo saya hilmi mahasiswa semester 5 Universitas Udayana</p>
           <div className="summaries">
             <div className="summary">
               <label>WhatsApp</label>
@@ -54,7 +63,7 @@ const About = () => {
             </div>
             <div className="summary">
               <label>Alamat</label>
-              <span>Jalan Taman Putri II No. 3, Mumbul, Kuta Selatan, Badung, Bali</span>
+              <span>Badung, Bali</span>
             </div>
           </div>
           <div className="more">
@@ -63,13 +72,7 @@ const About = () => {
         </div>
         </div>
       </div>
-      <div className="follow-us">
-        <h4>Ikuti Kami</h4>
-        <a href="/"><img src={IconWhatsapp} alt="WhatsApp"/></a>
-        <a href="/"><img src={IconEmail} alt="Email"/></a>
-        <a href="/"><img src={IconFacebook} alt="Facebook"/></a>
-        <a href="/"><img src={IconInstagram} alt="Instagram"/></a>
-      </div>
+      
       
 
     </div>
