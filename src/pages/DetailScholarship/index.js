@@ -9,8 +9,8 @@ import axios from 'axios';
 
 const DetailScholarship = (props) => {
   const [scholarship, setScholarship] = useState();
+  
   let deadline;
-
   if (scholarship) {
     deadline = new Date(scholarship.deadline);
   }
@@ -25,7 +25,6 @@ const DetailScholarship = (props) => {
         {
           label: 'Yes',
           onClick: () => {
-            console.log(scholarship.id);
             axios.delete(`http://localhost:4000/v1/scholarships/${scholarship._id}`, {
               withCredentials: true,
             })
@@ -60,8 +59,22 @@ const DetailScholarship = (props) => {
 
     fetchData();
   }, [props]);
+
   
   if (scholarship) {
+
+    let actionMenu;
+    if (props.user) {
+      if (props.user._id === scholarship.author.user_id) {
+        actionMenu = (
+          <div className="d-flex align-items-center">
+            <a href={`/add-scholarship/${scholarship._id}`} className="me-3">Edit</a> | 
+            <Button color="danger" className="ms-3" onClick={confirmDelete}>Hapus</Button>
+          </div>
+        );
+      }
+    }
+
     return (
       <main className="container my-4">
   
@@ -88,10 +101,9 @@ const DetailScholarship = (props) => {
                 {scholarship.description}
             </p>
             <p className="text-start text-secondary">Ditulis oleh {scholarship.author.name}</p>
-            <div className="d-flex align-items-center">
-              <a href={`/add-scholarship/${scholarship._id}`} className="me-3">Edit</a> | 
-              <Button color="danger" className="ms-3" onClick={confirmDelete}>Hapus</Button>
-            </div>
+
+            { actionMenu }
+
           </div>
 
         </div>
