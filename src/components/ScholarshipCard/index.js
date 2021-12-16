@@ -8,7 +8,7 @@ const ScholarshipCard = (props) => {
   const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   return (
     <div>
-      <Card className="mb-4 shadow">
+      <Card className="scholarship-card mb-4 bg-transparent">
         <a href={`/detail-scholarship/${id}`}>
           <img src={poster} alt={title} className="img-card" />
         </a>

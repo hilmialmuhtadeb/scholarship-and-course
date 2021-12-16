@@ -1,3 +1,11 @@
+.scholarship-card {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.233);
+  transition: .2s;
+}
+
+.scholarship-card:hover {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.233);
+}
 .scholarship-card__text {
   overflow: hidden;
   text-overflow: ellipsis;

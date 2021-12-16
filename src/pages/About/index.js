@@ -26,7 +26,7 @@ const About = () => {
             <img src={PhotoHilmi} alt="Foto Hilmi"/>
           </div>
           <h5>Hilmi Almuhtade Billah</h5>
-          <div className="labels">
+          <div className="labels mb-4">
             <span>Leader</span>
             <span>Web Developer</span>
           </div>
@@ -34,7 +34,7 @@ const About = () => {
           <div className="summaries">
             <div className="summary">
               <label>WhatsApp</label>
-              <span>087865463510</span>
+              <span>089601628845</span>
             </div>
             <div className="summary">
               <label>Alamat</label>
@@ -51,11 +51,11 @@ const About = () => {
             <img src={PhotoWinda} alt="Foto Winda"/>
           </div>
           <h5>Ni Wayan Windayani</h5>
-          <div className="labels">
-            <span>Vice Leader</span>
+          <div className="labels mb-4">
+            <span>Leader Too</span>
             <span>Web Developer</span>
           </div>
-          <p>Halo saya hilmi mahasiswa semester 5 Universitas Udayana</p>
+          <p>Halo saya Winda mahasiswa semester 5 Universitas Udayana</p>
           <div className="summaries">
             <div className="summary">
               <label>WhatsApp</label>

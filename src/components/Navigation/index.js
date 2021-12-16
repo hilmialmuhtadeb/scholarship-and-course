@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap'
+import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown, Button } from 'reactstrap'
 
 const Navigation = (props) => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
@@ -22,20 +22,22 @@ const Navigation = (props) => {
   if(!props.user) {
     menu = (
       <>
-        <NavItem className='ms-5'>
+        <NavItem className='ms-lg-4'>
           <NavLink href="/register">Daftar</NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink href="/login">Masuk</NavLink>
+        <NavItem className='ms-lg-4'>
+          <a href="/login">
+            <Button color='primary' outline className='px-4'>Masuk</Button>
+          </a>
         </NavItem>
       </>
     );
   } else {
     menu = (
-      <UncontrolledDropdown inNavbar nav className='ms-5'>
+      <UncontrolledDropdown inNavbar nav>
         <DropdownToggle caret nav>{ props.user.name }</DropdownToggle>
 
-        <DropdownMenu dark end>
+        <DropdownMenu light end>
           <DropdownItem>
             <NavLink onClick={logout}>Logout</NavLink>
           </DropdownItem>
@@ -46,41 +48,40 @@ const Navigation = (props) => {
   }
   
   return (
-    <>
-      <Navbar color="dark" expand="md" container dark>
-        <NavbarBrand href="/">Scholarship and Course</NavbarBrand>
+    <Navbar color="light" expand="md" light className='shadow-sm px-0 px-lg-4'>
+      <NavbarBrand href="/">Scholarship and Course</NavbarBrand>
 
-        <NavbarToggler onClick={() => {setNavbarOpen(!isNavbarOpen)}} />
+      <NavbarToggler onClick={() => {setNavbarOpen(!isNavbarOpen)}} />
 
-        <Collapse isOpen={isNavbarOpen} navbar>
-          <Nav className="ms-auto" navbar>
+      <Collapse isOpen={isNavbarOpen} navbar>
+        <Nav className="me-auto" navbar>
 
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>Beasiswa</DropdownToggle>
+          <UncontrolledDropdown inNavbar nav className='ms-lg-4'>
+            <DropdownToggle caret nav>Beasiswa</DropdownToggle>
 
-              <DropdownMenu end dark>
-                <DropdownItem>
-                  <NavLink href="/scholarships">Pendidikan</NavLink>
-                </DropdownItem>
+            <DropdownMenu end light>
+              <DropdownItem>
+                <NavLink href="/scholarships">Pendidikan</NavLink>
+              </DropdownItem>
 
-                <DropdownItem>
-                  <NavLink href="/courses">Kursus</NavLink>
-                </DropdownItem>
-              </DropdownMenu>
+              <DropdownItem>
+                <NavLink href="/courses">Kursus</NavLink>
+              </DropdownItem>
+            </DropdownMenu>
 
-            </UncontrolledDropdown>
+          </UncontrolledDropdown>
 
-            <NavItem>
-              <NavLink href="/about">Tentang Kami</NavLink>
-            </NavItem>
+          <NavItem className='ms-lg-4'>
+            <NavLink href="/about">Tentang Kami</NavLink>
+          </NavItem>
 
-            { menu }
+        </Nav>
+        <Nav className="ms-auto" navbar>
+          { menu }
+        </Nav>
+      </Collapse>
 
-          </Nav>
-        </Collapse>
-
-      </Navbar>
-    </>
+    </Navbar>
   )
 }
 

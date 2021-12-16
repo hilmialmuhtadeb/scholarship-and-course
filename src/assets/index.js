@@ -8,5 +8,18 @@ import PhotoWinda from "./images/winda.jpg"
 import PhotoHilmi from "./images/hilmi.jpg"
 import LoginPage from "./images/login-page.jpg"
 import LeftArrow from "./icons/left-arrow.png"
+import StudyIllustration from './images/study.png';
 
-export {ScholarshipImage, HomepageImage, IconWhatsapp, IconEmail, IconFacebook, IconInstagram, PhotoWinda, PhotoHilmi, LoginPage, LeftArrow}
+export {
+  ScholarshipImage, 
+  HomepageImage, 
+  IconWhatsapp, 
+  IconEmail, 
+  IconFacebook, 
+  IconInstagram, 
+  PhotoWinda, 
+  PhotoHilmi, 
+  LoginPage, 
+  LeftArrow,
+  StudyIllustration,
+}
