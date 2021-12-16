@@ -4,11 +4,11 @@ import { Home, Scholarship, DetailScholarship, AddScholarship, About } from '..'
 import { Footer, Navigation } from '../../components'
 import './mainApp.css';
 
-const MainApp = () => {
+const MainApp = (props) => {
   return (
     <div className="main-app-wrapper">
 
-      <Navigation />
+      <Navigation user={props.user} />
 
       <div className="content-wrapper">
         <Router>
@@ -23,18 +23,18 @@ const MainApp = () => {
             </Route>
 
             <Route path="/detail-scholarship/:id">
-              <DetailScholarship />
+              <DetailScholarship user={props.user} />
             </Route>
 
             <Route path="/add-scholarship/:id?">
-              <AddScholarship />
+              <AddScholarship user={props.user} />
             </Route>
 
             <Route path="/about">
               <About />
             </Route>
 
-            <Route path="/">
+            <Route path="/" exact>
               <Home />
             </Route>
             
