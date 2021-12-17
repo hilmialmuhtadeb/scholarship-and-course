@@ -92,7 +92,7 @@ const Home = () => {
               <Button size="sm fw-bold">Lihat Semua</Button>
             </a>
           </div>
-          <div className="row">
+          <div className="row mb-4">
             { showScholarship }
           </div>
 

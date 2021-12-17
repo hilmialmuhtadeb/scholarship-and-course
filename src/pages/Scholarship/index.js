@@ -27,6 +27,21 @@ const Scholarship = (props) => {
     
     fetchData();
   }, [counter, props]);
+
+  let addScholarshipButton;
+  if (props.user) {
+    addScholarshipButton = (
+      <a href="/add-scholarship" className="btn btn-primary">
+        Tambah Informasi Beasiswa
+      </a>
+    )
+  } else {
+    addScholarshipButton = (
+      <a href="/login" className="btn btn-primary">
+        Masuk Untuk Tambah Beasiswa
+      </a>
+    )
+  }
   
   return (
     <main className="container my-5">
@@ -36,9 +51,7 @@ const Scholarship = (props) => {
       </div>
 
       <div className="d-flex justify-content-end mb-4">
-        <a href="/add-scholarship" className="btn btn-primary">
-          Tambah Informasi Beasiswa
-        </a>
+        { addScholarshipButton }
       </div>
 
       <div className="row">

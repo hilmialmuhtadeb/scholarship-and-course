@@ -15,11 +15,11 @@ const MainApp = (props) => {
           <Switch>
 
             <Route path="/scholarships">
-              <Scholarship category="1" />
+              <Scholarship category="1" user={props.user}/>
             </Route>
 
             <Route path="/courses">
-              <Scholarship category="2" />
+              <Scholarship category="2" user={props.user}/>
             </Route>
 
             <Route path="/detail-scholarship/:id">

@@ -13,14 +13,15 @@ const ScholarshipCard = (props) => {
           <img src={poster} alt={title} className="img-card" />
         </a>
         <CardBody>
-          <CardTitle tag="h5">
+          <CardTitle tag="h5" className='scholarship-card__title'>
             {title}
           </CardTitle>
           <CardSubtitle
             className="mb-2 text-muted"
             tag="small"
-          >
-            {`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`} &middot; {name}
+            >
+            <p className='m-0 fw-bold'>{name}</p>
+            <p className="mb-2">Batas aplikasi : <span className="text-danger">{`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`}</span></p>
           </CardSubtitle>
           <CardText className="scholarship-card__text">
             {description}
