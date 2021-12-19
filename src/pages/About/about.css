@@ -1,89 +1,23 @@
-.about{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    gap: 15px;
-    padding: 20px;
-    align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #050c44;
+.main{
+    background-color: #e9e8f0;
 }
 
-.about-us{
-    max-width: 100%;
-    padding: 20px;
-    background: #ada6c5;
-    border-radius: 24px;
-    border: 1px solid #f5f5f5;
-    margin-left: 15%;
-    max-width: 40%;
-    display: flex;
-}
-
-.about-us h3{
-    margin: 25px;
-}
-
-.about-us p{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-left: 2px solid #160F3C;
-}
-
-.about-us p a{
-    color: #160F3C;
-    font-weight: bold;
-}
-
-.about-us p a:hover{
-    color: #6f65a8;
-}
-
-.our-team__item{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    gap: 20px;
-    padding: 20px;
-    margin-left: 18%;
-    margin-bottom: 10px;
-}
-
-.leader, .vice-leader{
-    position: inherit;
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    align-items: center;
-    transition: all .5s ease-in-out;
-    width: 400px;
-    background: #ffffff;
-    border-radius: 24px;
-    border: 1px solid #f5f5f5;
+.tim{
+    background-color: #dad4f8;
 }
 
 .photos{
-    padding: 8px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid #f5f5f5;
 }
 
-.photos img{
+.photos-img{
     width: 72px;
     height: 72px;
-    border-radius: 20px;
     object-fit: cover;
 }
 
 .labels{
-    display: flex;
-    flex-direction: row;
     gap: 8px;
-    align-items: center;
 }
 
 .labels span{
@@ -91,15 +25,6 @@
     color: #f5f5f5;
     padding: 4px 12px;
     border-radius: 8px;
-}
-
-.summaries{
-    display: flex;
-    width: 100%;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 16px;
 }
 
 .summary{
@@ -111,58 +36,15 @@
 .summary label{
     font-weight: 400;
     color: #888;
-    text-align: left;
 }
 
 .summary span{
     font-weight: 500;
     font-size: 14px;
     color: #555;
-    text-align: left;
-}
-
-.more{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-
-.know-more{
-    height: 40px;
-    width: 140px;
-    background: #160F3C;
-    border-radius: 16px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #f5f5f5;
-    margin-top: 40px;
-    border: none;
-    outline: none;
-    cursor: pointer;
 }
 
 .know-more:hover{
     transform: translateY(-8px);
     scale: 1.1;
-    color: #7464d3;
-}
-
-.follow-us{
-    max-width: 40%;
-    padding: 20px;
-    background: #ada6c5;
-    border-radius: 24px;
-    border: 1px solid #f5f5f5;
-    margin: 25px;
-    display: flex;
-    position: inherit;
-    flex-direction: row;
-}
-
-.follow-us h4{
-    padding-left: 15px;
-}
-
-.follow-us a img{
-    padding-left: 10px;
 }
