@@ -1,4 +1,4 @@
-import ScholarshipImage from "./images/scholarship-image.jpg";
+import ScholarshipImage from "./images/scholarship-image.png";
 import HomepageImage from "./images/homepage.png";
 import IconWhatsapp from "./icons/whatsapp.png";
 import IconEmail from "./icons/email.png";
