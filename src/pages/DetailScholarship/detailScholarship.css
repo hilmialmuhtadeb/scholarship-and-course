@@ -1,4 +1,5 @@
 .scholarship__title {
+  font-family: 'Poppins';
   font-size: 2rem;
 }
 .scholarship__description {
@@ -12,8 +13,7 @@
   max-width: 250px;
 }
 .poster-image {
-  width: 80%;
-  height: 500px;
+  width: 100%;
   object-fit: cover;
 }
 

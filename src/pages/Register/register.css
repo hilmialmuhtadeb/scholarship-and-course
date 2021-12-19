@@ -2,3 +2,14 @@
     background-size: cover;
     height: 100vh;
 }
+.form-card {
+    width: 40%;
+}
+
+.form-title {
+    font-size: 1.4rem;
+}
+
+.form-subtitle {
+    font-size: 1.2rem;
+}

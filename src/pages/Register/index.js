@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
-import {postUserToApi} from '../../utils/FormHandler';
 import { ScholarshipImage } from '../../assets'
+import { registerUser } from '../../utils/UserHandler'
 import "./register.css"
 
 const BackgroundImg = {
@@ -20,7 +20,7 @@ const Register = (props) => {
       password,
     };
 
-    postUserToApi(user);
+    registerUser(user);
   }
 
   if (props.user) {
@@ -29,25 +29,27 @@ const Register = (props) => {
   
   return (
     <div className="bg-image" style={BackgroundImg}>
-      <div className="d-flex justify-content-center p-4">
-        <div className="row my-5 bg-light border border-primary rounded p-4">
-            <h1 className="text-center mb-4">Buat Akun</h1>
+      <div className="d-flex justify-content-center">
+        
+        <div className="mt-4 bg-light border border-primary rounded p-4 form-card">
+            <h1 className="text-center form-title logo-text text-blue">Scholarship and Course</h1>
+            <h2 className="text-center mb-4 form-subtitle">Buat Akun</h2>
 
             <Form>
 
               <FormGroup>
                 <Label for="name">Nama Lengkap</Label>
-                <Input id="name" name="name" type="text" onChange={(e) => setName(e.target.value)} />
+                <Input bsSize='sm' id="name" name="name" type="text" onChange={(e) => setName(e.target.value)} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="username">Username</Label>
-                <Input id="username" name="username" type="text" onChange={(e) => setUsername(e.target.value)} />
+                <Input bsSize='sm' id="username" name="username" type="text" onChange={(e) => setUsername(e.target.value)} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="password">Password</Label>
-                <Input id="password" name="password" type="password" onChange={(e) => setPassword(e.target.value)} />
+                <Input bsSize='sm' id="password" name="password" type="password" onChange={(e) => setPassword(e.target.value)} />
               </FormGroup>
 
               <div className="d-grid mt-2 mb-4">
@@ -58,6 +60,7 @@ const Register = (props) => {
 
             </Form>
         </div>
+
       </div>
     </div>
   )

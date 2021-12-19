@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <footer className="text-white">
       <div className="container my-5">
-        <h2 className='footer__title'>Scholarship and Course</h2>
+        <h2 className='footer__title'>
+          <span className="logo-text text-blue">Scholarship and Course</span>
+        </h2>
         <p className='footer__tagline'>Raih Kesempatan Belajarmu!</p>
       </div>
       <div className="container">
@@ -73,7 +75,7 @@ const Footer = () => {
 
       </div>
       <div className="footer__bottom d-flex text-center align-items-center justify-content-center">
-        &copy; 2021 Scholarship and Course
+        &copy; 2021 <span className="mx-2 logo-text">Scholarship and Course</span>
       </div>
     </footer>
   )

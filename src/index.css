@@ -8,6 +8,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.logo-text {
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+
+.text-poppins {
+  font-family: 'Poppins';
+}
+
+.navbar.logo-text,
+.text-blue {
+  color: #474bff;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

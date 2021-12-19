@@ -54,13 +54,10 @@ const Navigation = (props) => {
   
   return (
     <Navbar color="light" expand="md" light className='shadow-sm px-0 px-lg-4'>
-      <div className='col-md-1'>
-        <a href='/'>
-          <img className="img-fluid" src={Logo} alt="logo snc"/>
-        </a>
-      </div>
-
-      <NavbarBrand href="/">Scholarship and Course</NavbarBrand>
+      <NavbarBrand href="/"  className='d-flex align-items-center'>
+        <img className="img-fluid" src={Logo} alt="logo snc"/>
+        <span className="navbar logo-text">Scholarship and Course</span>
+      </NavbarBrand>
 
       <NavbarToggler onClick={() => {setNavbarOpen(!isNavbarOpen)}} />
 

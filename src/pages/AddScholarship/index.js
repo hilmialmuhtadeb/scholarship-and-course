@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, FormText, Input, Label } from 'reactstrap'
 import axios from 'axios'
 import "./addScholarship.css"
 import { withRouter } from 'react-router'
-import { postScholarshipToApi, updateScholarshipToApi } from '../../utils/FormHandler'
+import { createScholarship, updateScholarship } from '../../utils/ScholarshipHandler'
 
 const AddScholarship = (props) => {
   const [title, setTitle] = useState('');
@@ -56,9 +56,9 @@ const AddScholarship = (props) => {
     };
     if (isEdit) {
       const id = props.match.params.id;
-      updateScholarshipToApi(scholarship, id);
+      updateScholarship(scholarship, id);
     } else {
-      postScholarshipToApi(scholarship);
+      createScholarship(scholarship);
     }
   }
   

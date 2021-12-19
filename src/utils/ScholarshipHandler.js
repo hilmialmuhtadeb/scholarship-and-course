@@ -1,6 +1,8 @@
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from "axios";
 
-const postScholarshipToApi = (scholarship) => {
+const createScholarship = (scholarship) => {
   const {title, deadline, poster, description, category, user_name, user_id} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
@@ -28,7 +30,7 @@ const postScholarshipToApi = (scholarship) => {
   });
 }
 
-const updateScholarshipToApi = (scholarship, id) => {
+const updateScholarship = (scholarship, id) => {
   const {title, deadline, poster, description, category} = scholarship;
   const formData = new FormData();
   formData.append('title', title);
@@ -56,46 +58,52 @@ const updateScholarshipToApi = (scholarship, id) => {
   });
 }
 
-const postUserToApi = (user) => {
-  const { name, username, password } = user;
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('username', username);
-  formData.append('password', password);
-
-  axios.post('http://localhost:4000/v1/auth/register', formData)
-    .then((response) => {
-      if (response.status === 201) {
-        alert(response.data.message);
-        window.location.href = `/login`;
+const deleteScholarship = (scholarship) => {
+  confirmAlert({
+    title: 'Hapus Informasi Beasiswa?',
+    message: 'Informasi beasiswa akan dihapus secara permanen.',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => {
+          axios.delete(`http://localhost:4000/v1/scholarships/${scholarship._id}`, {
+            withCredentials: true,
+          })
+          .then((response) => {
+            if (response.status === 200) {
+              alert(response.data.message);
+              window.location.href = '/scholarships';
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+        }
+      },
+      {
+        label: 'No',
+        onClick: () => {
+          console.log('batal menghapus beasiswa');
+        }
       }
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
+    ]
+  });
 }
 
-const loginUserToApi = (user) => {
-  const { username, password } = user;
-  const formData = new FormData();
-  formData.append('username', username);
-  formData.append('password', password);
+const getDetailScholarship = async (id, setScholarship) => {
+  const response =  await axios.get(`http://localhost:4000/v1/scholarships/${id}`);
+  return response.data.data;
+}
 
-  axios.post('http://localhost:4000/v1/auth/login', formData, {
-    withCredentials: true,
-  })
-    .then((response) => {
-      alert('Berhasil login!');
-      return window.location.href = '/';
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
+const getAllScholarship = async (category, counter) => {
+  const response = await axios.get(`http://localhost:4000/v1/scholarships?category=${category}&page=${counter}&perPage=3`);
+  return response.data;
 }
 
 export {
-  postScholarshipToApi,
-  updateScholarshipToApi,
-  postUserToApi,
-  loginUserToApi,
+  createScholarship,
+  updateScholarship,
+  deleteScholarship,
+  getDetailScholarship,
+  getAllScholarship,
 };

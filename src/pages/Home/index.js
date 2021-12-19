@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
 import { StudyIllustration } from '../../assets'
-import { ScholarshipCard } from '../../components';
+import { createScholarshipCardCheck } from '../../utils/templates/HomepageHelper';
 import "./home.css"
 
 const Home = () => {
@@ -22,44 +22,8 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const _createScholarshipCards = (scholarshipArr) => {
-    return scholarshipArr.map((scholarship) => {
-      return (
-        <div className="col-md-4">
-          <ScholarshipCard
-            key={scholarship._id}
-            title={scholarship.title}
-            deadline={scholarship.deadline}
-            poster={`http://localhost:4000/v1/${scholarship.poster}`}
-            description={scholarship.description}
-            name={scholarship.author.name}
-            id={scholarship._id}
-          />
-        </div>
-      )
-    })
-  }
-
-  const _createEmptyScholarship = () => {
-    return (
-      <div className="row justify-content-center">
-        <div className="col-sm-8 bg-danger rounded-3 text-center p-2 mt-5">
-          <p className="text-white m-0">Belum ada beasiswa tersedia.</p>
-        </div>
-      </div>
-    )
-  }
-  
-  const _createScholarshipCardCheck = (arr) => {
-    if (arr.length > 0) {
-      return _createScholarshipCards(arr);
-    } else {
-      return _createEmptyScholarship();
-    }
-  }
-
-  const showScholarship = _createScholarshipCardCheck(dataScholarship);
-  const showCourse = _createScholarshipCardCheck(dataCourse);
+  const showScholarship = createScholarshipCardCheck(dataScholarship);
+  const showCourse = createScholarshipCardCheck(dataCourse);
   
   return (
     <main>
@@ -118,12 +82,6 @@ const Home = () => {
       </section>
 
     </main>
-
-    // <main>
-    //   <img className="img-fluid" width="100%" src={HomepageImage} alt="Poster Homepage"/>
-    //   <p className="homepage-text text-center">Temukan beasiswa dan kursus keinginanmu dengan mudah!</p>
-    //   <a href="/scholarship"><button className="btn-action">Get Started</button></a>
-    // </main>
   )
 }
 

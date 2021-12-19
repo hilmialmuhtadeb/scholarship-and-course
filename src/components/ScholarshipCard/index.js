@@ -13,14 +13,18 @@ const ScholarshipCard = (props) => {
           <img src={poster} alt={title} className="img-card" />
         </a>
         <CardBody>
-          <CardTitle tag="h5" className='scholarship-card__title'>
+          <CardTitle tag="h5" className='scholarship-card__title text-poppins'>
             {title}
           </CardTitle>
           <CardSubtitle
             className="mb-2 text-muted"
             tag="small"
             >
-            <p className='m-0 fw-bold'>{name}</p>
+            <p className='m-0 fw-bold d-flex align-items-center'>
+              {name} <span className="verified-icon mx-1 bg-primary">
+                <i class="fa fa-check text-white" aria-hidden="true"></i>
+              </span>
+            </p>
             <p className="mb-2">Batas aplikasi : <span className="text-danger">{`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`}</span></p>
           </CardSubtitle>
           <CardText className="scholarship-card__text">
