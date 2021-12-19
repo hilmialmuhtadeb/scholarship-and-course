@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home, Scholarship, DetailScholarship, AddScholarship, About } from '..'
+import { Home, Scholarship, Favorite, DetailScholarship, AddScholarship, About } from '..'
 import { Footer, Navigation } from '../../components'
 import './mainApp.css';
 
@@ -20,6 +20,10 @@ const MainApp = (props) => {
 
             <Route path="/courses">
               <Scholarship category="2" user={props.user}/>
+            </Route>
+
+            <Route path="/favorites/:username">
+              <Favorite user={props.user}/>
             </Route>
 
             <Route path="/detail-scholarship/:id">

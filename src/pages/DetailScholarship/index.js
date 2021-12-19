@@ -9,6 +9,7 @@ import axios from 'axios';
 
 const DetailScholarship = (props) => {
   const [scholarship, setScholarship] = useState();
+  const [isFavorited, setIsFavorited] = useState(false);
   
   let deadline;
   if (scholarship) {
@@ -48,6 +49,19 @@ const DetailScholarship = (props) => {
       ]
     });
   }
+
+  const addToFavorite = () => {
+    axios.post('http://localhost:4000/v1/favorites', {
+      username: props.user.username,
+      scholarshipId: scholarship._id,
+    });
+  }
+
+  const removeFromFavorite = () => {
+      const username = props.user.username;
+      const scholarshipId = scholarship._id;
+      axios.delete(`http://localhost:4000/v1/favorites?username=${username}&scholarshipId=${scholarshipId}`);
+  }
   
   useEffect(() => {
     const id = props.match.params.id;
@@ -57,12 +71,61 @@ const DetailScholarship = (props) => {
       setScholarship(response.data);
     }
 
+    const fetchFavorite = async (username) => {
+      let response = await fetch(`http://localhost:4000/v1/favorites?username=${username}&scholarshipId=${id}`);
+      response = await response.json();
+      if (response.favorite !== null) {
+        setIsFavorited(true);
+      } else {
+        setIsFavorited(false);
+      }
+    }
+
+    if (props.user) {
+      const username = props.user.username;
+      fetchFavorite(username);
+    }
+    
     fetchData();
   }, [props]);
-
   
   if (scholarship) {
 
+    let breadcrumb;
+    if(scholarship.category === 1) {
+      breadcrumb = (
+        <a href="/scholarships">
+          Pendidikan
+        </a>
+      );
+    } else {
+      breadcrumb = (
+        <a href="/courses">
+          Kursus
+        </a>
+      )
+    }
+
+
+    let favoriteButton;
+    if (props.user) {
+      if (!isFavorited) {
+        favoriteButton = (
+          <Button color='primary' className='my-4' outline block onClick={addToFavorite}>Tambahkan ke Favorit</Button>
+        );
+      } else {
+        favoriteButton = (
+          <Button color='danger' className='my-4' outline block onClick={removeFromFavorite}>Hapus dari Favorit</Button>
+        );
+      }
+    } else {
+      favoriteButton = (
+        <a href="/login" className="text-decoration-none">
+          <Button color='primary' className='my-4' block>Masuk dan Tambahkan ke Favorit</Button>
+        </a>
+      );
+    }
+    
     let actionMenu;
     if (props.user) {
       if (props.user._id === scholarship.author.user_id) {
@@ -87,20 +150,20 @@ const DetailScholarship = (props) => {
           <div className="col-md-6">
             <Breadcrumb>
               <BreadcrumbItem>
-                <a href="/scholarships">
-                  Beasiswa
-                </a>
+                {breadcrumb}
               </BreadcrumbItem>
-              <BreadcrumbItem active>
+              <BreadcrumbItem className='scholarship__breadcrumb' active>
                 {scholarship.title}
               </BreadcrumbItem>
             </Breadcrumb>
             <h1 className="scholarship__title my-2">{scholarship.title}</h1>
             <p className="text-secondary">Batas Pengajuan : {`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`}</p>
-            <p className="text-opacity-50 text-start">
+            <p className="text-opacity-50 text-start scholarship__description">
                 {scholarship.description}
             </p>
             <p className="text-start text-secondary">Ditulis oleh {scholarship.author.name}</p>
+            
+            { favoriteButton }
 
             { actionMenu }
 

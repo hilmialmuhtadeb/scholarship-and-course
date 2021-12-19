@@ -28,13 +28,13 @@ const Footer = () => {
             <h3 className="footer__subtitle mb-4">Sosial Media</h3>
             <ul>
               <li className="footer_list-item">
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/dicoding"><i class="fa fa-instagram text-danger"></i> Instagram</a>
               </li>
               <li className="footer_list-item">
-                <a href="#">Twitter</a>
+                <a href="https://twitter.com/dicoding"><i class="fa fa-twitter text-primary"></i> Twitter</a>
               </li>
               <li className="footer_list-item">
-                <a href="#">TikTok</a>
+                <a href="https://www.facebook.com/dicoding/"><i class="fa fa-facebook-square text-primary"></i> Facebook</a>
               </li>
             </ul>
           </div>
@@ -43,10 +43,10 @@ const Footer = () => {
             <h3 className="footer__subtitle mb-4">Kantor Kami</h3>
             <ul>
               <li className="footer_list-item mb-3">
-                Pondok Benowo Indah Blok T-21, Babat Jerawat, Pakal, Surabaya, Jawa Timur, Indonesia, 60197.
+                <i class="fa fa-map-marker text-danger"></i> Pondok Benowo Indah Blok T-21, Babat Jerawat, Pakal, Surabaya, Jawa Timur, Indonesia, 60197.
               </li>
               <li className="footer_list-item mb-3">
-                Jalan Taman Putri II No. 3, Mumbul, Badung, Bali, Indonesia, 80361.
+                <i class="fa fa-map-marker text-danger"></i> Jalan Taman Putri II No. 3, Mumbul, Badung, Bali, Indonesia, 80361.
               </li>
             </ul>
           </div>
@@ -61,10 +61,10 @@ const Footer = () => {
                 hilmialmuhtadeb@gmail.com
               </li>
               <li className="footer_list-item">
-                ☎️ 0878-6546-3510
+                ☎️ 0878-6546-3510 (winda)
               </li>
               <li className="footer_list-item mb-3">
-                ☎️ 0896-0162-8845
+                ☎️ 0896-0162-8845 (Hilmi)
               </li>
             </ul>
           </div>

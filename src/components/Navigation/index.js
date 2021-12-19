@@ -41,6 +41,10 @@ const Navigation = (props) => {
           <DropdownItem>
             <NavLink onClick={logout}>Logout</NavLink>
           </DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>
+            <NavLink href={"/favorites/" + props.user.username}>Beasiswa Disimpan</NavLink>
+          </DropdownItem>
         </DropdownMenu>
 
       </UncontrolledDropdown>
@@ -59,7 +63,7 @@ const Navigation = (props) => {
           <UncontrolledDropdown inNavbar nav className='ms-lg-4'>
             <DropdownToggle caret nav>Beasiswa</DropdownToggle>
 
-            <DropdownMenu end light>
+            <DropdownMenu light end>
               <DropdownItem>
                 <NavLink href="/scholarships">Pendidikan</NavLink>
               </DropdownItem>

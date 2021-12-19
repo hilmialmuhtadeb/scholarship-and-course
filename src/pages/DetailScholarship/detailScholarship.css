@@ -1,6 +1,16 @@
 .scholarship__title {
   font-size: 2rem;
 }
+.scholarship__description {
+  white-space: pre-line;
+}
+
+.scholarship__breadcrumb {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
 .poster-image {
   width: 80%;
   height: 500px;
