@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown, Button } from 'reactstrap'
+import { Logo } from '../../assets'
 
 const Navigation = (props) => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
@@ -53,6 +54,12 @@ const Navigation = (props) => {
   
   return (
     <Navbar color="light" expand="md" light className='shadow-sm px-0 px-lg-4'>
+      <div className='col-md-1'>
+        <a href='/'>
+          <img className="img-fluid" src={Logo} alt="logo snc"/>
+        </a>
+      </div>
+
       <NavbarBrand href="/">Scholarship and Course</NavbarBrand>
 
       <NavbarToggler onClick={() => {setNavbarOpen(!isNavbarOpen)}} />
