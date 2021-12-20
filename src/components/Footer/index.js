@@ -57,10 +57,17 @@ const Footer = () => {
             <h3 className="footer__subtitle mb-4">Pusat Bantuan</h3>
             <ul>
               <li className="footer_list-item">
+<<<<<<< HEAD
                 windayani@gmail.com
               </li>
               <li className="footer_list-item mb-3">
                 almuhtadeb@gmail.com
+=======
+                niwayanwindayani@gmail.com
+              </li>
+              <li className="footer_list-item mb-3">
+                hilmialmuhtadeb@gmail.com
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
               </li>
               <li className="footer_list-item">
                 ☎️ 0878-6546-3510 (winda)

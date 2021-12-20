@@ -30,9 +30,13 @@ const Login = (props) => {
     <div className="bg-image" style={BackgroundImg}>
       <div className="d-flex justify-content-center">
         <div className="mt-4 bg-light border border-primary rounded p-4 form-card">
+<<<<<<< HEAD
           <a href="/" className='text-decoration-none'>
             <h1 className="text-center form-title logo-text text-blue">Scholarship and Course</h1>
           </a>
+=======
+          <h1 className="text-center form-title logo-text text-blue">Scholarship and Course</h1>
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
           <h2 className="text-center mb-4 form-subtitle">Masuk</h2>
 
             <Form>
@@ -51,6 +55,10 @@ const Login = (props) => {
                 <Button color="primary" onClick={onSubmit}>Masuk</Button>
               </div>
               <p className='m-0'>Belum punya akun? <a href="/register">Daftar</a></p>
+<<<<<<< HEAD
+=======
+              <a href="/">Kembali ke home</a>
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 
             </Form>
       

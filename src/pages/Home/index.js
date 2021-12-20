@@ -30,7 +30,11 @@ const Home = () => {
 
       <section id="hero">
         <div className="container">
+<<<<<<< HEAD
           <div className="row hero-wrapper mt-4 justify-content-between">
+=======
+          <div className="row mt-4 justify-content-between">
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
             <div className="col-sm-7 pe-3 d-flex flex-column justify-content-center">
               <h1 className='fw-bold title'>Raih Kesempatan Belajarmu</h1>
               <p className='text-secondary'>Semua orang berhak untuk mendapatkan pendidikan terbaik. Informasi beasiswa terlengkap dan terbaru ada di Scholarship and Course.</p>
@@ -39,7 +43,11 @@ const Home = () => {
               </a>
             </div>
             <div className="col-sm-5">
+<<<<<<< HEAD
               <img className='img-fluid hero-img' src={StudyIllustration} alt="ilustrasi belajar" />
+=======
+              <img className='img-fluid' src={StudyIllustration} alt="ilustrasi belajar" />
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
             </div>
           </div>
         </div>
@@ -72,9 +80,15 @@ const Home = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       <section className='py-5' id="testimonial">
         <div className="container">
           <h2 className="fw-bold m-0 subtitle mb-4">Testimoni</h2>
+=======
+      <section className='py-5' id="glance">
+        <div className="container">
+          <h2 className="fw-bold m-0 subtitle mb-4">Sekilas Kami</h2>
+>>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
           <div className="row">
 
           </div>
