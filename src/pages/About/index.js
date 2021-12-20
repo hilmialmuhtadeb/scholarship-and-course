@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className='main'>
       <div className='container'>
-        <div className="row mt-4 justify-content-between p-2">
+        <div className="row justify-content-between p-2">
           <div className="col-sm-7 pe-3 d-flex flex-column justify-content-center">
             <h3 className='fw-bold title'>Tentang Kami</h3>
             <p className='text-secondary'>Scholarship and Course merupakan platform berbasis website sebagai media untuk mendapatkan informasi atau membagikan informasi beasiswa pendidikan dan kursus. <a href="/">Create your future easily!</a></p>

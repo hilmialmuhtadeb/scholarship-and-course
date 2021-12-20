@@ -70,12 +70,12 @@ const AddScholarship = (props) => {
 
         <FormGroup>
           <Label for="title">Judul</Label>
-          <Input id="title" name="title" type="text" value={isEdit ? title : undefined} onChange={(e) => setTitle(e.target.value)} />
+          <Input id="title" name="title" type="text" value={isEdit ? title : undefined} onChange={(e) => setTitle(e.target.value)} required />
         </FormGroup>
 
         <FormGroup>
           <Label for="category">Kategori</Label>
-          <Input id="category" name="category" type="select" onChange={(e) => setCategory(e.target.value)}>
+          <Input id="category" name="category" type="select" onChange={(e) => setCategory(e.target.value)} required>
             <option disabled selected>Pilih salah satu kategori!</option>
             <option value="1" selected={category === 1 ? true : false}>Pendidikan</option>
             <option value="2" selected={category === 2 ? true : false}>Kursus</option>
@@ -85,18 +85,18 @@ const AddScholarship = (props) => {
         <FormGroup>
           <Label for="poster">Poster</Label>
           {image && <img className="preview d-block mb-3" src={image} alt="preview" />}
-          <Input id="poster" name="poster" type="file" onChange={(e) => onPosterUpload(e)} />
-          <FormText>&#8505; Menambahkan poster dapat membuat mahasiswa lebih tertarik dan informasi mudah dipahami.</FormText>
+          <Input id="poster" name="poster" type="file" onChange={(e) => onPosterUpload(e)} required />
+          <FormText>&#8505; Poster yang baik dapat membuat mahasiswa lebih tertarik dan informasi mudah dipahami.</FormText>
         </FormGroup>
 
         <FormGroup>
           <Label for="deadline">Batas Pengajuan Beasiswa</Label>
-          <Input id="deadline" name="deadline" type="date" value={isEdit ? deadline : undefined} onChange={(e) => setDeadline(e.target.value)} />
+          <Input id="deadline" name="deadline" type="date" value={isEdit ? deadline : undefined} onChange={(e) => setDeadline(e.target.value)} required />
         </FormGroup>
 
         <FormGroup>
           <Label for="description">Deskripsi</Label>
-          <textarea className="form-control" name="description" id="description" rows="10" value={isEdit ? description : undefined} onChange={(e) => setDescription(e.target.value)}></textarea>
+          <textarea className="form-control" name="description" id="description" rows="10" value={isEdit ? description : undefined} onChange={(e) => setDescription(e.target.value)} required></textarea>
           <FormText>&#8505; Jelaskan detail beasiswa yang berisi cakupan, syarat, dan cara mendaftar beasiswa.</FormText>
         </FormGroup>
 
