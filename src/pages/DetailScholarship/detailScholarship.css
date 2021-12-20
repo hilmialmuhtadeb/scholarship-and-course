@@ -1,0 +1,23 @@
+.scholarship__title {
+  font-family: 'Poppins';
+  font-size: 2rem;
+}
+.scholarship__description {
+  white-space: pre-line;
+}
+
+.scholarship__breadcrumb {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+.poster-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.loading-text {
+  text-align: center;
+  line-height: 500px;
+}

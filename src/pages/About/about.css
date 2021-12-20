@@ -1,0 +1,50 @@
+.main{
+    background-color: #e9e8f0;
+}
+
+.tim{
+    background-color: #dad4f8;
+}
+
+.photos{
+    border: 1px solid #f5f5f5;
+}
+
+.photos-img{
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}
+
+.labels{
+    gap: 8px;
+}
+
+.labels span{
+    background: #160F3C;
+    color: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.summary{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.summary label{
+    font-weight: 400;
+    color: #888;
+}
+
+.summary span{
+    font-weight: 500;
+    font-size: 14px;
+    color: #555;
+}
+
+.know-more:hover{
+    transform: translateY(-8px);
+    scale: 1.1;
+}

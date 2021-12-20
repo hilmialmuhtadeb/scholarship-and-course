@@ -1,0 +1,8 @@
+main h1 {
+  font-size: 1.8rem;
+}
+.preview {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
