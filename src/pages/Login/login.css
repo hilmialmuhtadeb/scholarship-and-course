@@ -3,11 +3,7 @@
     height: 100vh;
 }
 .form-card {
-<<<<<<< HEAD
     width: 90%;
-=======
-    width: 40%;
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 }
 
 .form-title {
@@ -16,7 +12,6 @@
 
 .form-subtitle {
     font-size: 1.2rem;
-<<<<<<< HEAD
 }
 
 @media screen and (min-width: 576px) {
@@ -29,6 +24,4 @@
     .form-card {
         width: 40%;
     }
-=======
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 }

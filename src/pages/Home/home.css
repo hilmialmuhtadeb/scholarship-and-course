@@ -41,8 +41,6 @@ h3.subtitle {
     scale: 1.1;
     color: #7464d3;
 }
-
-<<<<<<< HEAD
 @media screen and (max-width: 576px) {
     .hero-wrapper {
         flex-direction: column-reverse;
@@ -54,5 +52,3 @@ h3.subtitle {
       margin-bottom: 30px;
     }
   }
-=======
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d

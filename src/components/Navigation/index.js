@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { DropdownItem, DropdownMenu, DropdownToggle, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown, Button } from 'reactstrap'
 import { Logo } from '../../assets'
-<<<<<<< HEAD
 import './navigation.css';
-=======
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 import { logoutUser } from '../../utils/UserHandler';
 
 const Navigation = (props) => {

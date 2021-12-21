@@ -32,15 +32,10 @@ const Register = (props) => {
       <div className="d-flex justify-content-center">
         
         <div className="mt-4 bg-light border border-primary rounded p-4 form-card">
-<<<<<<< HEAD
           <a href="/" className='text-decoration-none'>
             <h1 className="text-center form-title logo-text text-blue">Scholarship and Course</h1>
           </a>
           <h2 className="text-center mb-4 form-subtitle">Buat Akun</h2>
-=======
-            <h1 className="text-center form-title logo-text text-blue">Scholarship and Course</h1>
-            <h2 className="text-center mb-4 form-subtitle">Buat Akun</h2>
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 
             <Form>
 
@@ -63,10 +58,6 @@ const Register = (props) => {
                 <Button color="primary" onClick={onSubmit}>Daftar</Button>
               </div>
               <p className='m-0'>Sudah punya akun? <a href="/login">Masuk</a></p>
-<<<<<<< HEAD
-=======
-              <a href="/" className="home-link">Kembali ke home</a>
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
 
             </Form>
         </div>

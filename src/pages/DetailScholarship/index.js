@@ -48,11 +48,7 @@ const DetailScholarship = (props) => {
   
         <div className="row justify-content-center">
 
-<<<<<<< HEAD
           <div className="col-md-6 mb-4 mb-md-0">
-=======
-          <div className="col-md-6">
->>>>>>> 33c379c040b1109819766e61b6b50dd1f4b7f10d
             <img src={`http://localhost:4000/v1/${scholarship.poster}`} alt="Poster Beasiswa" className="poster-image mb-3" />
             { actionMenu }
           </div>
