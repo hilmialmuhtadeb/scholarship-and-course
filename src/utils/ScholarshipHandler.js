@@ -144,7 +144,7 @@ const getDetailScholarship = async (id, setScholarship) => {
 }
 
 const getAllScholarship = async (category, counter) => {
-  const response = await axios.get(`http://localhost:4000/v1/scholarships?category=${category}&page=${counter}&perPage=3`);
+  const response = await axios.get(`http://localhost:4000/v1/scholarships?category=${category}&page=${counter}&perPage=9`);
   return response.data;
 }
 
