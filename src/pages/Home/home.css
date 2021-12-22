@@ -1,3 +1,20 @@
+#scholarships {
+    min-height: 500px;
+    background-color: #f1f0f9;
+}
+
+h1.title {
+    font-size: 2rem;
+}
+
+h2.subtitle {
+    font-size: 1.7rem;
+}
+
+h3.subtitle {
+    font-size: 1.3rem;
+}
+
 .homepage-text{
     font-size: 2.5rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -24,4 +41,52 @@
     scale: 1.1;
     color: #7464d3;
 }
+.testi__wrapper {
+    box-sizing: border-box;
+}
 
+.testi__image {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.testi__name {
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.testi__role {
+    color: gray;
+}
+
+q.test__quote {
+    quotes: "“""”""‘""’";
+    line-height: 1.7em;
+}
+
+q::before {
+    content: open-quote;
+}
+
+q::after {
+    content: close-quote;
+}
+@media screen and (max-width: 576px) {
+    .hero-wrapper {
+        flex-direction: column-reverse;
+    }
+    .hero-wrapper .hero-img {
+      max-width: 70%;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+    .testi__wrapper {
+        text-align: center;
+    }
+
+    .testi__image {
+        max-width: 40%;
+        margin-bottom: 20px;
+    }
+  }

@@ -1,0 +1,42 @@
+footer {
+  background-color: #393939;
+}
+
+h2.footer__title {
+  font-weight: 400;
+}
+
+p.footer__tagline {
+  color: rgb(202, 202, 202);
+}
+
+h3.footer__subtitle {
+  font-size: 1.2rem;
+  font-family: 'Poppins';
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px !important;
+}
+
+li.footer_list-item {
+  color: rgb(202, 202, 202);
+  margin-bottom: 5px;
+}
+
+li.footer_list-item a {
+  color: rgb(202, 202, 202);
+  text-decoration: none;
+  transition: .2s;
+}
+
+li.footer_list-item a:hover {
+  color: rgb(238, 238, 238);
+}
+
+.footer__bottom {
+  min-height: 50px;
+  background-color: #212124;
+  color: rgb(226, 226, 226);
+}

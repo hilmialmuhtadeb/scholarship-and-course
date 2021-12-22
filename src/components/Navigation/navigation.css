@@ -1,0 +1,10 @@
+@media screen and (max-width: 576px) {
+  .navbar.logo-text {
+    font-size: .8em;
+  }
+}
+@media screen and (max-width: 360px) {
+  .navbar.logo-text {
+    display: none;
+  }
+}

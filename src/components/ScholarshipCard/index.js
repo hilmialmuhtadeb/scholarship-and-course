@@ -1,32 +1,36 @@
 import React from 'react'
-import { Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap'
 import './scholarshipCard.css'
-import { ScholarshipImage } from '../../assets'
 
-const ScholarshipCard = () => {
+const ScholarshipCard = (props) => {
+  const {title, poster, description, name, id} = props;
+  const deadline = new Date(props.deadline);
+  const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   return (
     <div>
-      <Card className="mb-4 shadow">
-        <CardImg
-          alt="Card image cap"
-          src={ScholarshipImage}
-          top
-          width="100%"
-        />
+      <Card className="scholarship-card mb-4 bg-transparent">
+        <a href={`/detail-scholarship/${id}`}>
+          <img src={poster} alt={title} className="img-card" />
+        </a>
         <CardBody>
-          <CardTitle tag="h5">
-            Beasiswa Pertamina Sobat Bumi 2021
+          <CardTitle tag="h5" className='scholarship-card__title text-poppins'>
+            {title}
           </CardTitle>
           <CardSubtitle
             className="mb-2 text-muted"
             tag="small"
-          >
-            S1 dan D3
+            >
+            <p className='m-0 fw-bold d-flex align-items-center'>
+              {name} <span className="verified-icon mx-1 bg-primary">
+                <i class="fa fa-check text-white" aria-hidden="true"></i>
+              </span>
+            </p>
+            <p className="mb-2">Batas aplikasi : <span className="text-danger">{`${deadline.getDate()} ${months[deadline.getMonth()]} ${deadline.getFullYear()}`}</span></p>
           </CardSubtitle>
           <CardText className="scholarship-card__text">
-            Beasiswa Pertamina Sobat Bumi merupakan apresiasi kepada mahasiswa berprestasi secara akademik, aktif dalam organisasi atau kegiatan sosial-kemasyarakatan, serta memiliki kepedulian terhadap lingkungan.
+            {description}
           </CardText>
-          <a href="/detail-scholarship" className="link-primary">Selengkapnya</a>
+          <a href={`/detail-scholarship/${id}`} className="link-primary">Selengkapnya</a>
         </CardBody>
       </Card>
     </div>

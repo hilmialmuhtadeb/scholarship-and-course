@@ -1,0 +1,27 @@
+.bg-image{
+    background-size: cover;
+    height: 100vh;
+}
+.form-card {
+    width: 90%;
+}
+
+.form-title {
+    font-size: 1.4rem;
+}
+
+.form-subtitle {
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 576px) {
+    .form-card {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .form-card {
+        width: 40%;
+    }
+}

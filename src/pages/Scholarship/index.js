@@ -1,39 +1,41 @@
-import React from 'react'
-import { Button } from 'reactstrap'
-import { ScholarshipCard } from '../../components'
+import React, { useEffect, useState } from 'react'
+import { addScholarshipButtonCreator, createPagination, createScholarshipList } from '../../utils/templates/ScholarshipListHelper';
+import { getAllScholarship } from '../../utils/ScholarshipHandler';
 
-const Scholarship = () => {
+const Scholarship = (props) => {
+  const [dataScholarship, setDataScholarship] = useState([]);
+  const [pageInformation, setPageInformation] = useState({});
+  const [counter, setCounter] = useState(1);
+
+  useEffect(() => {
+    getAllScholarship(props.category, counter)
+      .then((response) => {
+        setDataScholarship(response.data);
+        setPageInformation(response);
+      })
+  }, [counter, props.category]);
+
+  const scholarshipList = createScholarshipList(pageInformation, dataScholarship);
+  const pagination = createPagination(pageInformation, counter, setCounter);
+  const addScholarshipButton = addScholarshipButtonCreator(props.user);
+  
   return (
     <main className="container my-5">
+
+      <div className="text-center mb-4">
+        <h1 className='fw-normal'>Kategori Beasiswa : <span className="fw-bold">{props.category < 2 ? 'Pendidikan' : 'Kursus'}</span></h1>
+      </div>
+
       <div className="d-flex justify-content-end mb-4">
-        <a href="/add-scholarship" className="btn btn-primary">
-          Tambah Informasi Beasiswa
-        </a>
+        { addScholarshipButton }
       </div>
+
       <div className="row">
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
-        <div className="col-md-4">
-          <ScholarshipCard />
-        </div>
+        { scholarshipList }
       </div>
-      <div className="d-flex justify-content-center">
-        <Button className="mx-2" color="warning">&#10094;</Button>
-        <Button className="mx-2" color="warning">&#10095;</Button>
-      </div>
+
+      { pagination }
+
     </main>
   )
 }
