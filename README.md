@@ -10,11 +10,10 @@
   </p>
 </p>
 
-
 ## Table of contents
 
 - [Daftar](#daftar)
-- [Login](#login)
+- [Masuk](#masuk)
 - [Melihat Informasi Beasiswa](#melihat-informasi-beasiswa)
 - [Melihat Detail Beasiswa](#melihat-detail-beasiswa)
 - [Menambahkan Informasi Beasiswa](#menambahkan-informasi-beasiswa)
@@ -30,18 +29,15 @@
 2. Isi semua field yang diperlukan
 3. Klik tombol daftar
 
-<a href="https://ibb.co/YbHMmcX"><img src="https://i.ibb.co/CWRZgb6/register.png" alt="register" border="0"></a>
+   <img src="https://i.ibb.co/LvVWmxr/register.png" alt="register" border="0" width=512>
 
-<!-- <img src="https://github.com/hilmialmuhtadeb/scholarship-and-course/blob/main/src/assets/images/snc1.png" alt="Logo" width=120 height=120> -->
+## Masuk
 
+1. Pada bagian navigasi, klik menu masuk
+2. Isi semua field yang diperlukan
+3. Klik tombol masuk
 
-- Instruction 1
-- Instruction 2
-- Instruction 3
-
-## Status
-
-Here goes all the budgets
+   <img src="https://i.ibb.co/ZSnvrMN/login.png" alt="login" border="0" width=512>
 
 ## What's included
 
